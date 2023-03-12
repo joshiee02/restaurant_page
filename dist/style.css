@@ -159,5 +159,7 @@ footer {
   text-align: center;
 }
 box-icon {
-  width: 16px;
+  width: 18px;
+  margin-left: 0.25rem;
+  
 }
