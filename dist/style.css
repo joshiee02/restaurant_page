@@ -97,6 +97,31 @@ img {
   width: 1750px;
   height: auto;
 }
+#shop {
+  display: flex;
+  justify-content: space-between;
+  width: 1835px;
+  height: auto;
+}
+#shop div:first-child {
+  width: 1230px;
+}
+#img1 {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+#shop > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+#img2, #img3 {
+  margin: 0;
+  width: 580px;
+}
+#img2 {
+  margin-bottom: 1.5rem;
+}
 section {
   width: 45vw;
 }
