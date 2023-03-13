@@ -87,6 +87,7 @@ a {
   letter-spacing: 0.125rem;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
   color: #888888;
 }
 a:visited {
