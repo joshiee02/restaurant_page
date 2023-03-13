@@ -1,5 +1,5 @@
 import './style.css';
-import createImage from './ourRoots';
+import { createImage, createIntroduction } from './ourRoots';
 
 const content = document.querySelector('#content');
 
@@ -58,4 +58,5 @@ function createFooter() {
 
 createMainHeader();
 createImage();
+createIntroduction();
 createFooter();
