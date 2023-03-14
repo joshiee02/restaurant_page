@@ -45,4 +45,4 @@ const ourRoots = {
   },
 };
 
-export { ourRoots };
+export default ourRoots;
