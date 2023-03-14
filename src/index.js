@@ -15,12 +15,21 @@ const mainUI = {
 
     const navOurRoots = document.createElement('a');
     navOurRoots.textContent = 'OUR ROOTS';
+    navOurRoots.addEventListener('click', () => {
+      mainUI.resetUI();
+    });
 
     const navOurCake = document.createElement('a');
     navOurCake.textContent = 'OUR CAKE';
+    navOurCake.addEventListener('click', () => {
+      mainUI.resetUI();
+    });
 
     const navOurShop = document.createElement('a');
     navOurShop.textContent = 'SHOP';
+    navOurShop.addEventListener('click', () => {
+      mainUI.resetUI();
+    });
 
     const nav = document.createElement('nav');
     nav.appendChild(navOurRoots);
@@ -57,6 +66,13 @@ const mainUI = {
     icons.appendChild(pinterestIcon);
 
     footer.appendChild(icons);
+  },
+
+  resetUI() {
+    const img = document.querySelector('img');
+    const section = document.querySelector('section');
+    content.removeChild(img);
+    content.removeChild(section);
   },
 };
 
