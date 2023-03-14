@@ -13,17 +13,19 @@ const mainUI = {
     header.textContent = 'SWEET CRAVINGS CO.';
     mainHeader.appendChild(header);
 
-    const ourRoots = document.createElement('a');
-    ourRoots.textContent = 'OUR ROOTS';
-    const ourCake = document.createElement('a');
-    ourCake.textContent = 'OUR CAKE';
-    const ourShop = document.createElement('a');
-    ourShop.textContent = 'SHOP';
+    const navOurRoots = document.createElement('a');
+    navOurRoots.textContent = 'OUR ROOTS';
+
+    const navOurCake = document.createElement('a');
+    navOurCake.textContent = 'OUR CAKE';
+
+    const navOurShop = document.createElement('a');
+    navOurShop.textContent = 'SHOP';
 
     const nav = document.createElement('nav');
-    nav.appendChild(ourRoots);
-    nav.appendChild(ourCake);
-    nav.appendChild(ourShop);
+    nav.appendChild(navOurRoots);
+    nav.appendChild(navOurCake);
+    nav.appendChild(navOurShop);
     mainHeader.appendChild(nav);
   },
 
