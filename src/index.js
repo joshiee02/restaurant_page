@@ -4,7 +4,7 @@ import ourCake from './ourCake';
 
 const content = document.querySelector('#content');
 
-const additionalUI = {
+const addUI = {
   createImage(imgsrc) {
     const img = document.createElement('img');
     img.setAttribute('src', imgsrc);
@@ -56,8 +56,8 @@ const defaultUI = {
     navOurRoots.addEventListener('click', () => {
       defaultUI.resetUI();
       defaultUI.createMainHeader();
-      additionalUI.createImage(ourRoots.imgsrc);
-      additionalUI.createIntro(
+      addUI.createImage(ourRoots.imgsrc);
+      addUI.createIntro(
         ourRoots.h1,
         ourRoots.firstParagraph,
         ourRoots.secondParagraph,
@@ -72,8 +72,8 @@ const defaultUI = {
     navOurCake.addEventListener('click', () => {
       defaultUI.resetUI();
       defaultUI.createMainHeader();
-      additionalUI.createImage(ourCake.imgsrc);
-      additionalUI.createIntro(
+      addUI.createImage(ourCake.imgsrc);
+      addUI.createIntro(
         ourCake.h1,
         ourCake.firstParagraph,
         ourCake.secondParagraph,
@@ -132,8 +132,8 @@ const defaultUI = {
   },
 };
 defaultUI.createMainHeader();
-additionalUI.createImage(ourRoots.imgsrc);
-additionalUI.createIntro(
+addUI.createImage(ourRoots.imgsrc);
+addUI.createIntro(
   ourRoots.h1,
   ourRoots.firstParagraph,
   ourRoots.secondParagraph,
