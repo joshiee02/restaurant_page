@@ -1,9 +1,47 @@
 import './style.css';
 import ourRoots from './ourRoots';
+import ourCake from './ourCake';
 
 const content = document.querySelector('#content');
 
-const mainUI = {
+const additionalUI = {
+  createImage(imgsrc) {
+    const img = document.createElement('img');
+    img.setAttribute('src', imgsrc);
+    content.appendChild(img);
+  },
+
+  createIntro(h1, firstP, secondP, thirdP, fourthP) {
+    const section = document.createElement('section');
+    section.appendChild(document.createElement('h1')).textContent = h1;
+
+    const firstParagraph = document.createElement('p');
+    firstParagraph.textContent = firstP;
+    section.appendChild(firstParagraph);
+
+    const secondParagraph = document.createElement('p');
+    secondParagraph.textContent = secondP;
+    section.appendChild(secondParagraph);
+
+    const thirdParagraph = document.createElement('p');
+    thirdParagraph.textContent = thirdP;
+    section.appendChild(thirdParagraph);
+
+    if (fourthP) {
+      const fourthParagraph = document.createElement('p');
+      fourthParagraph.textContent = fourthP;
+      section.appendChild(fourthParagraph);
+    }
+
+    const button = document.createElement('button');
+    button.textContent = 'LEARN MORE ABOUT OUR CAKE';
+    section.appendChild(button);
+
+    content.append(section);
+  },
+};
+
+const defaultUI = {
   createMainHeader() {
     const mainHeader = document.createElement('div');
     mainHeader.id = 'mainHeader';
@@ -16,19 +54,38 @@ const mainUI = {
     const navOurRoots = document.createElement('a');
     navOurRoots.textContent = 'OUR ROOTS';
     navOurRoots.addEventListener('click', () => {
-      mainUI.resetUI();
+      defaultUI.resetUI();
+      defaultUI.createMainHeader();
+      additionalUI.createImage(ourRoots.imgsrc);
+      additionalUI.createIntro(
+        ourRoots.h1,
+        ourRoots.firstParagraph,
+        ourRoots.secondParagraph,
+        ourRoots.thirdParagraph,
+        ourRoots.fourthParagraph,
+      );
+      defaultUI.createFooter();
     });
 
     const navOurCake = document.createElement('a');
     navOurCake.textContent = 'OUR CAKE';
     navOurCake.addEventListener('click', () => {
-      mainUI.resetUI();
+      defaultUI.resetUI();
+      defaultUI.createMainHeader();
+      additionalUI.createImage(ourCake.imgsrc);
+      additionalUI.createIntro(
+        ourCake.h1,
+        ourCake.firstParagraph,
+        ourCake.secondParagraph,
+        ourCake.thirdParagraph,
+      );
+      defaultUI.createFooter();
     });
 
     const navOurShop = document.createElement('a');
     navOurShop.textContent = 'SHOP';
     navOurShop.addEventListener('click', () => {
-      mainUI.resetUI();
+      defaultUI.resetUI();
     });
 
     const nav = document.createElement('nav');
@@ -69,14 +126,18 @@ const mainUI = {
   },
 
   resetUI() {
-    const img = document.querySelector('img');
-    const section = document.querySelector('section');
-    content.removeChild(img);
-    content.removeChild(section);
+    while (content.firstChild) {
+      content.removeChild(content.firstChild);
+    }
   },
 };
-
-mainUI.createMainHeader();
-ourRoots.createImage();
-ourRoots.createIntroduction();
-mainUI.createFooter();
+defaultUI.createMainHeader();
+additionalUI.createImage(ourRoots.imgsrc);
+additionalUI.createIntro(
+  ourRoots.h1,
+  ourRoots.firstParagraph,
+  ourRoots.secondParagraph,
+  ourRoots.thirdParagraph,
+  ourRoots.fourthParagraph,
+);
+defaultUI.createFooter();
