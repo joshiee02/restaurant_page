@@ -1,6 +1,7 @@
 import './style.css';
 import ourRoots from './ourRoots';
 import ourCake from './ourCake';
+import shop from './shop';
 
 const content = document.querySelector('#content');
 
@@ -86,6 +87,9 @@ const defaultUI = {
     navOurShop.textContent = 'SHOP';
     navOurShop.addEventListener('click', () => {
       defaultUI.resetUI();
+      defaultUI.createMainHeader();
+      shop.createShop();
+      defaultUI.createFooter();
     });
 
     const nav = document.createElement('nav');
